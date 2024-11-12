@@ -4,7 +4,7 @@
 
 #include <DHT.h>                  //Cargamos la libreria DHT
 
-//#include "max6675.h"
+
 
 #include <SD.h>
 #include <SPI.h>
@@ -12,7 +12,7 @@
 // Pin CS (Chip Select) para la tarjeta microSD. Este puede variar dependiendo de la placa
 
 const int chipSelect = 5;         // Asegúrate de que el pin corresponde a tu configuración
-//File archivo;
+
 #define SCREEN_WIDTH 128          //OLED display width, in pixels
 #define SCREEN_HEIGHT 64          //OLED display height, in pixels
 
@@ -34,45 +34,6 @@ void setup() {
   }
   delay(2000);
 
-  // Inicia la tarjeta microSD
- /* Serial.print("Inicializando tarjeta SD...");
-  if (!SD.begin(chipSelect)) {
-    Serial.println("Fallo al inicializar la tarjeta SD");
-    return;
-  }
-  
-//  Serial.println("Tarjeta SD inicializada.");
-//  archivo=SD.open("datos.txt", FILE_WRITE);
-
-  
-
-  // Leer el archivo desde la tarjeta SD
-  dataFile = SD.open("PsicrometricDigital.txt");
-  if (dataFile) {
-    Serial.println("Contenido del archivo:");
-    while (dataFile.available()) {
-      Serial.write(dataFile.read());
-    }
-    dataFile.close();
-  } else {
-    Serial.println("Error abriendo el archivo para leer.");
-  }
-  // Escribir un archivo en la tarjeta SD
-    File dataFile = SD.open("/PsicrometricDigital.txt", FILE_WRITE);
-  if (dataFile) {
-    dataFile.print("DHT22 ");
-    dataFile.print("Humidity: ");
-    dataFile.print(h);
-    dataFile.print("%");
-    dataFile.print("Temperature: ");
-    dataFile.print(t);
-    dataFile.print("°C");
-    dataFile.close();
-    Serial.println("Escritura en archivo exitosa.");
-  } else {
-    Serial.println("Error abriendo el archivo para escribir.");
-  }
-  */
   display.clearDisplay();
   display.setTextSize(2);
   display.setTextColor(WHITE);
